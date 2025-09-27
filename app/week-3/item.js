@@ -1,10 +1,10 @@
 import React from 'react';
 export default function Item({ name, quantity, category }) {
   return (
-    <li className="border p-2 rounded-md">
-      <p>{name}</p>
-      <p>Quantity: {quantity}</p>
-      <p className="capitalize">Category: {category}</p>
-    </li>
+    <ul className="border p-2 rounded-md">
+      <li>{name}</li>
+      <li>Quantity: {quantity}</li>
+      <li className="capitalize">Category: {category}</li>
+    </ul>
   );
 }
