@@ -8,6 +8,7 @@ export default function Page() {
         Shopping List
       </h1>
       <ItemList />
+
     </main>
   );
 }
