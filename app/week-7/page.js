@@ -18,7 +18,7 @@ export default function Page() {
 
       <NewItem onAddItem={handleAddItem} />
 
-      <ItemList items={items} />
+      <ItemList items={items} onItemSelect={handleItemSelect} />
     </main>
   );
 }
