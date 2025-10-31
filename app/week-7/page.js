@@ -12,6 +12,12 @@ export default function Page() {
     setItems((prevItems) => [...prevItems, newItem]);
   }
 
+  function handleItemSelect(item) {
+    console.log("Selected item:", item);
+  }
+
+
+
   return (
     <main className="mx-115 p-4 dark:text-gray-100">
       <h1 className="text-2xl font-bold text-gray-800">Week 7 — Shopping List</h1>
