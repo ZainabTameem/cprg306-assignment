@@ -20,7 +20,6 @@ export default function Page() {
       router.push("/week-9");
     }
   }, [user, router]);
-
   if (!user) {
     return null;
   }
@@ -28,7 +27,6 @@ export default function Page() {
   function handleAddItem(newItem) {
     setItems((prev) => [...prev, newItem]);
   }
-
   function handleItemSelect(item) {
     const cleanedName = item.name
       .split(",")[0]
@@ -38,17 +36,14 @@ export default function Page() {
 
     setSelectedItemName(cleanedName);
   }
-
   return (
     <main className="mx-50 p-4 dark:text-gray-100">
-
       <div className="grid md:grid-cols-2 gap-6">
         <div className="flex-1">
           <h1 className="text-2xl font-bold text-gray-800"> Shopping List + Meal Ideas</h1>
           <NewItem onAddItem={handleAddItem} />
           <ItemList items={items} onItemSelect={handleItemSelect} />
         </div>
-
         <div>
           <MealIdeas ingredient={selectedItemName} />
         </div>

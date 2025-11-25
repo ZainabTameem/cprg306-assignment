@@ -14,7 +14,6 @@ export default function LoginPage() {
       console.error(err);
     }
   };
-
   const handleLogout = async () => {
     try {
       await firebaseSignOut();
@@ -23,7 +22,6 @@ export default function LoginPage() {
       console.error(err);
     }
   };
-
   return (
     <main className="flex flex-col items-center justify-center ">
       <header className="mb-8 text-center">

@@ -4,7 +4,6 @@ import Item from "./item";
 
 export default function ItemList({ items, onItemSelect }) {
   const [sortBy, setSortBy] = useState("name");
-
   const sortedItems = [...items].sort((a, b) => {
     if (sortBy === "name") {
       return a.name.localeCompare(b.name);
@@ -13,7 +12,6 @@ export default function ItemList({ items, onItemSelect }) {
     }
     return 0;
   });
-
   return (
     <section>
       <div>

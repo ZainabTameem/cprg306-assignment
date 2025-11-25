@@ -11,28 +11,23 @@ export default function NewItem({ onAddItem }) {
       setQuantity(quantity + 1);
     }
   }
-
   function decrement() {
     if (quantity > 1) {
       setQuantity(quantity - 1);
     }
   }
-
   const handleSubmit = (event) => {
     event.preventDefault();
-
     const newItem = {
       name,
       quantity,
       category,
     };
-
     onAddItem(newItem);
     setName("");
     setQuantity(1);
     setCategory("produce");
   };
-
   return (
     <form
       onSubmit={handleSubmit}
@@ -55,7 +50,6 @@ export default function NewItem({ onAddItem }) {
           Quantity (1–20)
         </label>
       </div>
-
       <section className="bg-white">
         <div className="mb-4">
           <p className="text-sm text-gray-600">
@@ -83,7 +77,6 @@ export default function NewItem({ onAddItem }) {
         </div>
         <p className="text-xs text-gray-500">Allowed range: 1–20</p>
       </section>
-
       <div>
         <label htmlFor="category" className="block text-sm font-medium mb-1">
           Category
@@ -107,7 +100,6 @@ export default function NewItem({ onAddItem }) {
           <option value="other">Other</option>
         </select>
       </div>
-
       <button
         type="submit"
         className="rounded bg-emerald-600 hover:bg-emerald-800 text-white px-4 py-2"

@@ -1,14 +1,12 @@
 "use client";
 
 import { useState, useEffect } from "react";
-
 export default function MealIdeas({ ingredient }) {
   const [meals, setMeals] = useState([]);
   const [error, setError] = useState(null);
 
   async function fetchMealIdeas() {
     if (!ingredient) return;
-
     try {
       const response = await fetch(
         `https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredient}`
@@ -22,7 +20,6 @@ export default function MealIdeas({ ingredient }) {
       setError(err);
     }
   }
-
   useEffect(() => {
     fetchMealIdeas();
   }, [ingredient]);
@@ -35,7 +32,6 @@ export default function MealIdeas({ ingredient }) {
       </main>
     );
   }
-
   if (!ingredient) {
     return (
       <main className="p-4 w-full max-w-md mx-auto">
@@ -46,7 +42,6 @@ export default function MealIdeas({ ingredient }) {
       </main>
     );
   }
-
   if (meals.length === 0) {
     return (
       <main className="p-4 w-full max-w-md mx-auto">
@@ -57,14 +52,11 @@ export default function MealIdeas({ ingredient }) {
       </main>
     );
   }
-
   return (
     <main className="p-4 w-full max-w-md mx-auto">
       <p className="text-xl font-bold text-gray-800 mb-2">
         Meal ideas for “{ingredient}”
       </p>
-
-
       <ul>
         {meals.length > 0 ? (
           meals.map((meal) => (

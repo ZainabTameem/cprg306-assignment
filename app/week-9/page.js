@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 export default function LoginPage() {
   const { user, gitHubSignIn, firebaseSignOut } = useUserAuth();
   const router = useRouter();
-
   const handleLogin = async () => {
     try {
       await gitHubSignIn();
@@ -14,7 +13,6 @@ export default function LoginPage() {
       console.error(err);
     }
   };
-
   const handleLogout = async () => {
     try {
       await firebaseSignOut();
@@ -23,7 +21,6 @@ export default function LoginPage() {
       console.error(err);
     }
   };
-
   return (
     <main className="flex flex-col items-center justify-center ">
       <header className="mb-8 text-center">
@@ -46,7 +43,6 @@ export default function LoginPage() {
           </>
         )}
       </header>
-
       {user && (
         <section className="flex flex-col items-center gap-4">
           <button
@@ -55,7 +51,6 @@ export default function LoginPage() {
           >
             Sign Out
           </button>
-
           <Link
             href="/week-9/shopping-list"
             className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition-colors duration-200 font-semibold"

@@ -10,7 +10,6 @@ export default function Page() {
   const [items, setItems] = useState(itemsData);
   const [selectedItemName, setSelectedItemName] = useState("");
 
-  // Add new items
   function handleAddItem(newItem) {
     const itemWithId = {
       id: (items.length + 1).toString(),
@@ -18,8 +17,6 @@ export default function Page() {
     };
     setItems(prev => [...prev, itemWithId]);
   }
-
-  // Handle item selection and clean the name
   function handleItemSelect(item) {
     const cleanedName = item.name
       .split(",")[0]
@@ -29,22 +26,18 @@ export default function Page() {
 
     setSelectedItemName(cleanedName);
   }
-
   return (
     <main className="mx-50 p-4 dark:text-gray-100">
-
       <div className="grid md:grid-cols-2 gap-6">
         <div className="flex-1">
           <h1 className="text-2xl font-bold text-gray-800"> Shopping List + Meal Ideas</h1>
           <NewItem onAddItem={handleAddItem} />
           <ItemList items={items} onItemSelect={handleItemSelect} />
         </div>
-
         <div>
           <MealIdeas ingredient={selectedItemName} />
         </div>
       </div>
     </main>
-
   );
 }
