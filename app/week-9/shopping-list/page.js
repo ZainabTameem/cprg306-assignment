@@ -12,28 +12,23 @@ import { useRouter } from "next/navigation";
 export default function Page() {
   const [items, setItems] = useState(itemsData);
   const [selectedItemName, setSelectedItemName] = useState("");
-
   const { user } = useUserAuth();
   const router = useRouter();
 
-  // Redirect if not logged in
   useEffect(() => {
     if (!user) {
-      router.push("/week-9"); // redirect to landing page
+      router.push("/week-9");
     }
   }, [user, router]);
 
   if (!user) {
-    // Show nothing while redirecting
     return null;
   }
 
-  // Add new items
   function handleAddItem(newItem) {
     setItems((prev) => [...prev, newItem]);
   }
 
-  // Handle item selection and clean the name
   function handleItemSelect(item) {
     const cleanedName = item.name
       .split(",")[0]

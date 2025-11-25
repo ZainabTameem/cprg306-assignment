@@ -35,8 +35,8 @@ export default function ItemList({ items, onItemSelect }) {
       </div>
 
       <ul className="grid gap-3">
-        {sortedItems.map((item) => (
-          <Item key={item.id} {...item}
+        {sortedItems.map((item, index) => (
+          <Item key={index} {...item}
             onSelect={() => onItemSelect(item)}
           />
         ))}
